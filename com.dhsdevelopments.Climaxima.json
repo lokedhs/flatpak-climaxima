@@ -1,0 +1,110 @@
+{
+    "app-id": "com.dhsdevelopments.Climaxima",
+    "runtime": "org.freedesktop.Platform",
+    "runtime-version": "18.08",
+    "sdk": "org.freedesktop.Sdk",
+    "command": "foo",
+    "modules": [
+        {
+            "name": "sbcl",
+            "buildsystem": "simple",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "http://prdownloads.sourceforge.net/sbcl/sbcl-1.5.3-x86-64-linux-binary.tar.bz2",
+                    "sha256": "6fbd04e6fc81bc3b755372ba02410bc52466301b571337ff0a5f2b0ede6d76dc"
+                }
+            ],
+            "build-options": {
+                "env": {
+                    "BUILD_ROOT": "/app/sbcl"
+                }
+            },
+            "build-commands": [
+                "sh install.sh"
+            ]
+        },
+        {
+            "name": "mcclim",
+            "buildsystem": "simple",
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/McCLIM/McCLIM",
+                    "commit": "e0dafe84596a156d410dbed1254d3a038442921b"
+                },
+                {
+                    "type": "file",
+                    "path": "quicklisp.lisp"
+                },
+                {
+                    "type": "file",
+                    "path": "sbclrc"
+                }
+            ],
+            "build-options": {
+                "env": {
+                    "SBCL_HOME": "/app/sbcl/usr/local/lib/sbcl"
+                },
+                "build-args": [
+                    "--share=network"
+                ]
+            },
+            "build-commands": [
+                "/app/sbcl/usr/local/bin/sbcl --load quicklisp.lisp --quit --eval '(quicklisp-quickstart:install :path \"/app/quicklisp/\")'",
+                "mkdir /app/tools",
+                "cp sbclrc /app/tools/sbcl-init.lisp",
+                "cp -ar . /app/McCLIM",
+                "ln -s /app/McCLIM /app/quicklisp/local-projects"
+            ]
+        },
+        {
+            "name": "maxima-code",
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://git.code.sf.net/p/maxima/code",
+                    "commit": "0721ffcd43de13fd288362373edc9681929abed9"
+                }
+            ],
+            "build-options": {
+                "env": {
+                    "SBCL_HOME": "/app/sbcl/usr/local/lib/sbcl"
+                }
+            },
+            "config-opts": [ "--enable-sbcl", "--with-sbcl=/app/sbcl/usr/local/bin/sbcl" ],
+            "build-commands": [ "cp -ar . /app/maxima-code",
+                                "ln -s /app/maxima-code /app/quicklisp/local-projects/maxima-code" ]
+        },
+        {
+            "name": "climaxima",
+            "buildsystem": "simple",
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/lokedhs/maxima-client",
+                    "commit": "3c198d28f5b036a7b584387a2e2480869026a664"
+                }
+            ],
+            "build-options": {
+                "env": {
+                    "SBCL_HOME": "/app/sbcl/usr/local/lib/sbcl"
+                },
+                "build-args": [
+                    "--share=network"
+                ]
+            },
+            "build-commands": [
+                "cp -ar . /app/maxima-client",
+                "ln -s /app/maxima-client /app/quicklisp/local-projects/maxima-client",
+                "echo will start",
+                "cd /app/maxima-client/infoparser && /app/sbcl/usr/local/bin/sbcl --load /app/tools/sbcl-init.lisp --non-interactive --disable-debugger --eval '(ql:quickload \"infoparser\")' --eval '(sb-ext:save-lisp-and-die \"maxima-parser.bin\" :toplevel #'\"'\"'infoparser::resolve-example-code-external :executable t)'",
+                "/app/sbcl/usr/local/bin/sbcl --load /app/tools/sbcl-init.lisp --non-interactive --disable-debugger --eval '(ql:quickload \"infoparser\")' --eval '(infoparser:generate-doc-directory :skip-example t :skip-figures t)'"
+            ]
+        }
+    ],
+    "finish-args": [
+        "--socket=x11",
+        "--share=network"
+    ]
+}
