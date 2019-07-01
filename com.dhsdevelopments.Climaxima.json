@@ -1,9 +1,9 @@
 {
     "app-id": "com.dhsdevelopments.Climaxima",
-    "runtime": "org.freedesktop.Platform",
-    "runtime-version": "18.08",
-    "sdk": "org.freedesktop.Sdk",
-    "command": "/app/maxima-client/clim-maxima",
+    "runtime": "org.gnome.Platform",
+    "runtime-version": "3.30",
+    "sdk": "org.gnome.Sdk",
+    "command": "clim-maxima",
     "modules": [
         {
             "name": "sbcl",
@@ -55,7 +55,24 @@
                 "mkdir /app/tools",
                 "cp sbclrc /app/tools/sbcl-init.lisp",
                 "cp -ar . /app/McCLIM",
-                "ln -s /app/McCLIM /app/quicklisp/local-projects"
+                "ln -s /app/McCLIM /app/quicklisp/local-projects",
+                "sed -i 's/\"libfontconfig\\.so\"/(:or \"libfontconfig\\.so\\.1\" \"libfontconfig\\.so\")/' /app/McCLIM/Extensions/fontconfig/src/functions.lisp",
+                "sed -i 's/\"libharfbuzz\\.so\"/(:or \"libharfbuzz\\.so\\.0\" \"libharfbuzz\\.so\")/' /app/McCLIM/Extensions/harfbuzz/src/functions.lisp"
+            ]
+        },
+        {
+            "name": "cl-freetype2",
+            "buildsystem": "simple",
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/lokedhs/cl-freetype2",
+                    "commit": "fe9d8108154cb4f4e46622bcaea4ba6155a3b5af"
+                }
+            ],
+            "build-commands": [
+                "cp -ar . /app/cl-freetype2",
+                "ln -s /app/cl-freetype2 /app/quicklisp/local-projects"
             ]
         },
         {
@@ -103,7 +120,21 @@
                 "ln -s /app/maxima-client /app/quicklisp/local-projects/maxima-client",
                 "cd /app/maxima-client && /app/sbcl/usr/local/bin/sbcl --load /app/tools/sbcl-init.lisp --load startup.lisp",
                 "cd /app/maxima-client/infoparser && /app/sbcl/usr/local/bin/sbcl --load /app/tools/sbcl-init.lisp --non-interactive --disable-debugger --eval '(ql:quickload \"infoparser\")' --eval '(sb-ext:save-lisp-and-die \"maxima-parser.bin\" :toplevel #'\"'\"'infoparser::resolve-example-code-external :executable t)'",
+                "mkdir -p /app/bin",
+                "ln -s /app/maxima-client/clim-maxima /app/bin/clim-maxima",
                 "/app/sbcl/usr/local/bin/sbcl --load /app/tools/sbcl-init.lisp --non-interactive --disable-debugger --eval '(ql:quickload \"infoparser\")' --eval '(infoparser:generate-doc-directory :skip-example t :skip-figures t)'"
+            ]
+        },
+        {
+            "name": "desktop-integration",
+            "buildsystem": "simple",
+            "sources": [ { "type": "file", "path": "com.dhsdevelopments.Climaxima.appdata.xml" },
+                         { "type": "file", "path": "com.dhsdevelopments.Climaxima.desktop" } ],
+            "build-commands": [
+                "mkdir -p /app/share/metainfo",
+                "cp com.dhsdevelopments.Climaxima.appdata.xml /app/share/metainfo/com.dhsdevelopments.Climaxima.appdata.xml",
+                "mkdir -p /app/share/applications",
+                "cp com.dhsdevelopments.Climaxima.desktop /app/share/applications/com.dhsdevelopments.Climaxima.desktop"
             ]
         }
     ],
