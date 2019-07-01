@@ -3,7 +3,7 @@
     "runtime": "org.freedesktop.Platform",
     "runtime-version": "18.08",
     "sdk": "org.freedesktop.Sdk",
-    "command": "foo",
+    "command": "/app/maxima-client/clim-maxima",
     "modules": [
         {
             "name": "sbcl",
@@ -84,6 +84,10 @@
                     "type": "git",
                     "url": "https://github.com/lokedhs/maxima-client",
                     "commit": "3c198d28f5b036a7b584387a2e2480869026a664"
+                },
+                {
+                    "type": "file",
+                    "path": "startup.lisp"
                 }
             ],
             "build-options": {
@@ -97,7 +101,7 @@
             "build-commands": [
                 "cp -ar . /app/maxima-client",
                 "ln -s /app/maxima-client /app/quicklisp/local-projects/maxima-client",
-                "echo will start",
+                "cd /app/maxima-client && /app/sbcl/usr/local/bin/sbcl --load /app/tools/sbcl-init.lisp --load startup.lisp",
                 "cd /app/maxima-client/infoparser && /app/sbcl/usr/local/bin/sbcl --load /app/tools/sbcl-init.lisp --non-interactive --disable-debugger --eval '(ql:quickload \"infoparser\")' --eval '(sb-ext:save-lisp-and-die \"maxima-parser.bin\" :toplevel #'\"'\"'infoparser::resolve-example-code-external :executable t)'",
                 "/app/sbcl/usr/local/bin/sbcl --load /app/tools/sbcl-init.lisp --non-interactive --disable-debugger --eval '(ql:quickload \"infoparser\")' --eval '(infoparser:generate-doc-directory :skip-example t :skip-figures t)'"
             ]
