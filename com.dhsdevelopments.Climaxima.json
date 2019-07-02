@@ -25,6 +25,21 @@
             ]
         },
         {
+            "name": "mupdf",
+            "buildsystem": "simple",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://mupdf.com/downloads/archive/mupdf-1.15.0-source.tar.xz",
+                    "sha1": "dc5b40405b9a497e37370e26b2a8b115c944fe8a"
+                }
+            ],
+            "build-commands": [
+                "make HAVE_X11=no HAVE_GLUT=no prefix=/app/mupdf",
+                "make HAVE_X11=no HAVE_GLUT=no prefix=/app/mupdf install"
+            ]
+        },
+        {
             "name": "mcclim",
             "buildsystem": "simple",
             "sources": [
@@ -102,10 +117,8 @@
                     "url": "https://github.com/lokedhs/maxima-client",
                     "commit": "3c198d28f5b036a7b584387a2e2480869026a664"
                 },
-                {
-                    "type": "file",
-                    "path": "startup.lisp"
-                }
+                { "type": "file", "path": "startup.lisp" },
+                { "type": "file", "path": "build.sh" }
             ],
             "build-options": {
                 "env": {
@@ -116,13 +129,16 @@
                 ]
             },
             "build-commands": [
-                "cp -ar . /app/maxima-client",
-                "ln -s /app/maxima-client /app/quicklisp/local-projects/maxima-client",
-                "cd /app/maxima-client && /app/sbcl/usr/local/bin/sbcl --load /app/tools/sbcl-init.lisp --load startup.lisp",
-                "cd /app/maxima-client/infoparser && /app/sbcl/usr/local/bin/sbcl --load /app/tools/sbcl-init.lisp --non-interactive --disable-debugger --eval '(ql:quickload \"infoparser\")' --eval '(sb-ext:save-lisp-and-die \"maxima-parser.bin\" :toplevel #'\"'\"'infoparser::resolve-example-code-external :executable t)'",
+                "cp -ar . /app/maxima-client-build",
+                "ln -s /app/maxima-client-build /app/quicklisp/local-projects/maxima-client-build",
+                "cd /app/maxima-client-build && sh build.sh",
+                "mkdir /app/maxima-client",
+                "cp /app/maxima-client-build/clim-maxima /app/maxima-client",
+                "cp -ar /app/maxima-client-build/fonts /app/maxima-client-build/images /app/maxima-client",
+                "mkdir /app/maxima-client/infoparser",
+                "cp -ar /app/maxima-client-build/infoparser/docs /app/maxima-client-build/infoparser/figures /app/maxima-client/infoparser",
                 "mkdir -p /app/bin",
-                "ln -s /app/maxima-client/clim-maxima /app/bin/clim-maxima",
-                "/app/sbcl/usr/local/bin/sbcl --load /app/tools/sbcl-init.lisp --non-interactive --disable-debugger --eval '(ql:quickload \"infoparser\")' --eval '(infoparser:generate-doc-directory :skip-example t :skip-figures t)'"
+                "ln -s /app/maxima-client/clim-maxima /app/bin/clim-maxima"
             ]
         },
         {
@@ -141,5 +157,14 @@
     "finish-args": [
         "--socket=x11",
         "--share=network"
+    ],
+    "cleanup-commands": [
+        "rm -fr /app/mupdf",
+        "rm -fr /app/McCLIM",
+        "rm -fr /app/cl-freetype2",
+        "rm -fr /app/quicklisp",
+        "rm -fr /app/sbcl",
+        "rm -fr /app/tools",
+        "rm -fr /app/maxima-client-build"
     ]
 }
