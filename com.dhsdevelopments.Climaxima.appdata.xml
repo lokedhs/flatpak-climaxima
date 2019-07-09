@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<component type="desktop">
+<!-- Copyright 2019 Elias Martenson -->
+<component type="desktop-application">
   <id>com.dhsdevelopments.Climaxima</id>
-  <metadata_license>MIT</metadata_license>
   <name>Climaxima</name>
   <summary>Frontend for Maxima CAS</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+  <content_rating type="oars-1.0"/>
+  <update_contact>elias@dhsdevelopments.com</update_contact>
   <description>
     <p>
       Climaxima is a user interface building on Maxima.
@@ -11,4 +15,13 @@
   </description>
   <url type="homepage">https://github.com/lokedhs/maxima-client</url>
   <url type="bugtracker">https://github.com/lokedhs/maxima-client/issues</url>
+  <screenshots>
+    <screenshot type="default">
+      <caption>Main window for Climaxima</caption>
+      <image type="source">https://raw.githubusercontent.com/lokedhs/maxima-client/master/doc/screenshot.png</image>
+    </screenshot>
+  </screenshots>
+  <releases>
+    <release version="release-2019-07-08_01" date="2019-07-08" type="development"/>
+  </releases>
 </component>
