@@ -215,6 +215,7 @@
         "rm -fr /app/quicklisp",
         "rm -fr /app/sbcl",
         "rm -fr /app/tools",
-        "rm -fr /app/maxima-client-build"
+        "rm -fr /app/maxima-client-build",
+        "rm -fr /app/maxima-code"
     ]
 }
