@@ -194,12 +194,15 @@
             "name": "desktop-integration",
             "buildsystem": "simple",
             "sources": [ { "type": "file", "path": "com.dhsdevelopments.Climaxima.appdata.xml" },
-                         { "type": "file", "path": "com.dhsdevelopments.Climaxima.desktop" } ],
+                         { "type": "file", "path": "com.dhsdevelopments.Climaxima.desktop" },
+                         { "type": "file", "path": "climaxima.svg" } ],
             "build-commands": [
                 "mkdir -p /app/share/metainfo",
                 "cp com.dhsdevelopments.Climaxima.appdata.xml /app/share/metainfo/com.dhsdevelopments.Climaxima.appdata.xml",
                 "mkdir -p /app/share/applications",
-                "cp com.dhsdevelopments.Climaxima.desktop /app/share/applications/com.dhsdevelopments.Climaxima.desktop"
+                "cp com.dhsdevelopments.Climaxima.desktop /app/share/applications/com.dhsdevelopments.Climaxima.desktop",
+                "mkdir -p /app/share/icons/hicolor/scalable",
+                "cp climaxima.svg /app/share/icons/hicolor/scalable/climaxima.svg"
             ]
         }
     ],
