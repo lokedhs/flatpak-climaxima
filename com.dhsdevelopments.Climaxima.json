@@ -202,7 +202,7 @@
                 "mkdir -p /app/share/applications",
                 "cp com.dhsdevelopments.Climaxima.desktop /app/share/applications/com.dhsdevelopments.Climaxima.desktop",
                 "mkdir -p /app/share/icons/hicolor/scalable",
-                "cp climaxima.svg /app/share/icons/hicolor/scalable/climaxima.svg"
+                "cp climaxima.svg /app/share/icons/com.dhsdevelopments.Climaxima.svg"
             ]
         }
     ],
