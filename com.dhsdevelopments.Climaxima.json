@@ -115,7 +115,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/McCLIM/McCLIM",
-                    "commit": "bc9df1f448c557c29b02852567d445af4e23ddfa" }
+                    "commit": "1e22d77f2f95699ff6a2151c18eb42ce96c4b780" }
             ],
             "build-options": {
                 "env": {
@@ -150,7 +150,7 @@
                 {
                     "type": "git",
                     "url": "https://git.code.sf.net/p/maxima/code",
-                    "commit": "7ddf318dc83ba0070d5349ad8e10fe583acd1454"
+                    "commit": "ae13ea8085fe7cd3824ee2e2c647f2729952fc30"
                 }
             ],
             "build-options": {
