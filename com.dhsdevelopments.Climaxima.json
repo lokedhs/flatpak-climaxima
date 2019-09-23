@@ -11,8 +11,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "http://prdownloads.sourceforge.net/sbcl/sbcl-1.5.3-x86-64-linux-binary.tar.bz2",
-                    "sha256": "6fbd04e6fc81bc3b755372ba02410bc52466301b571337ff0a5f2b0ede6d76dc"
+                    "url": "http://prdownloads.sourceforge.net/sbcl/sbcl-1.5.6-x86-64-linux-binary.tar.bz2",
+                    "sha256": "bb359730e47970b7fed0c75a24c299fcc177541f1e04ba2182bf06d28bcda87b"
                 },
                 { "type": "file", "path": "ql.tar.gz" },
                 { "type": "file", "path": "sbclrc" }
@@ -115,7 +115,8 @@
                 {
                     "type": "git",
                     "url": "https://github.com/McCLIM/McCLIM",
-                    "commit": "1e22d77f2f95699ff6a2151c18eb42ce96c4b780" }
+                    "commit": "a250f1a482787bd7c3eef496da6df22856b79e02"
+                }
             ],
             "build-options": {
                 "env": {
@@ -150,7 +151,7 @@
                 {
                     "type": "git",
                     "url": "https://git.code.sf.net/p/maxima/code",
-                    "commit": "ae13ea8085fe7cd3824ee2e2c647f2729952fc30"
+                    "commit": "211aff20e128f7f8d4e3603c3874b5ec7a82a455"
                 }
             ],
             "build-options": {
