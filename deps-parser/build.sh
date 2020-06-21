@@ -32,7 +32,8 @@ if [ ! -d McCLIM ] ; then
     ln -s ../../McCLIM quicklisp/local-projects
 fi
 if [ ! -d maxima-code ] ; then
-    git clone https://git.code.sf.net/p/maxima/code maxima-code
+#    git clone https://git.code.sf.net/p/maxima/code maxima-code
+    git clone ../../../maxima-code
     (
         cd maxima-code
         ./bootstrap
