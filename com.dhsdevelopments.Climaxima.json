@@ -11,8 +11,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "http://prdownloads.sourceforge.net/sbcl/sbcl-2.0.5-x86-64-linux-binary.tar.bz2",
-                    "sha256": "e74bb136cb31e034193faab0c3488b0f3531da52ffaf1afea59be6eb62b51e59"
+                    "url": "http://prdownloads.sourceforge.net/sbcl/sbcl-2.0.10-x86-64-linux-binary.tar.bz2",
+                    "sha256": "5ac9304ea5fe49be44b87afbe02d73dc5a66cdd412759ee6ce8e8a8b5b214b87"
                 },
                 { "type": "file", "path": "ql.tar.gz" },
                 { "type": "file", "path": "sbclrc" }
@@ -32,8 +32,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://downloads.sourceforge.net/project/gnuplot/gnuplot/5.2.7/gnuplot-5.2.7.tar.gz",
-                    "sha256": "97fe503ff3b2e356fe2ae32203fc7fd2cf9cef1f46b60fe46dc501a228b9f4ed"
+                    "url": "https://downloads.sourceforge.net/project/gnuplot/gnuplot/5.4.0/gnuplot-5.4.0.tar.gz",
+                    "sha256": "eb4082f03a399fd1e9e2b380cf7a4f785e77023d8dcc7e17570c1b5570a49c47"
                 }
             ]
         },
@@ -43,8 +43,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://mupdf.com/downloads/archive/mupdf-1.15.0-source.tar.xz",
-                    "sha1": "dc5b40405b9a497e37370e26b2a8b115c944fe8a"
+                    "url": "https://mupdf.com/downloads/archive/mupdf-1.18.0-source.tar.xz",
+                    "sha1": "fc17bd01d5860e49b009f28a5ddb629e94af4510"
                 }
             ],
             "build-commands": [
@@ -56,53 +56,53 @@
             "name": "ql-cache",
             "buildsystem": "simple",
             "sources": [
-                { "type": "file", "url": "http://beta.quicklisp.org/archive/3bz/2020-06-10/3bz-20200610-git.tgz", "sha256": "da5bf78399f8e28c90bad63688421554983c92abaada9103b2ebbd670c81f291" },
-                { "type": "file", "url": "http://beta.quicklisp.org/archive/alexandria/2020-04-27/alexandria-20200427-git.tgz", "sha256": "d472ae48e97c822dd4204bacf6f202e59784d9dec139eb8dfb015fc8618f6a8a" },
-                { "type": "file", "url": "http://beta.quicklisp.org/archive/babel/2020-02-18/babel-20200218-git.tgz", "sha256": "d3ae4985e7d75473a443866654234770e2d709c2294b2dd421e6a2f39bb62a52" },
+                { "type": "file", "url": "http://beta.quicklisp.org/archive/3bz/2020-07-15/3bz-20200715-git.tgz", "sha256": "f5a504e50e3684d5764b10734a4ebe5f9085a19bd7291aa789e48409c76e65d2" },
+                { "type": "file", "url": "http://beta.quicklisp.org/archive/alexandria/2020-09-25/alexandria-20200925-git.tgz", "sha256": "d425c4106dbdf879d900d5979189c6df675323bd13cd0c0f80ea00a4ddb7fbb2" },
+                { "type": "file", "url": "http://beta.quicklisp.org/archive/babel/2020-09-25/babel-20200925-git.tgz", "sha256": "d14984a29d7717a7a8b6c61b259eab20c615edf0a0c8ff6252f41f0eb9a8f2c2" },
                 { "type": "file", "url": "http://beta.quicklisp.org/archive/bordeaux-threads/2020-06-10/bordeaux-threads-v0.8.8.tgz", "sha256": "f7026a580c6feb63dff7ac3882b7f1fda77dc2b9568208890cd3a493373debde" },
-                { "type": "file", "url": "http://beta.quicklisp.org/archive/cffi/2020-06-10/cffi_0.22.1.tgz", "sha256": "f64b94e39515f866ec654a86a22ebda241307900c1c3f57d12fc0e0856ea7240" },
+                { "type": "file", "url": "http://beta.quicklisp.org/archive/cffi/2020-07-15/cffi_0.23.0.tgz", "sha256": "93759ebbf36752fee57883f870b76676fc57b9bdd4d135ef3a58ba52cb5bf7eb" },
                 { "type": "file", "url": "http://beta.quicklisp.org/archive/cl-fad/2020-06-10/cl-fad-20200610-git.tgz", "sha256": "bdcc7432db1523c490dd75ced5367828d2385d36a8220ec4978d7c79a5c0a021" },
                 { "type": "file", "url": "http://beta.quicklisp.org/archive/cl-freetype2/2019-10-07/cl-freetype2-20191007-git.tgz", "sha256": "a12d6ff7c60753cc2738741a2f427f60fb6dcd0b5998f526fd65bd55cb76950b" },
                 { "type": "file", "url": "http://beta.quicklisp.org/archive/cl-jpeg/2017-06-30/cl-jpeg-20170630-git.tgz", "sha256": "80460de88b75808fae1ba59824247b4ac6b06e2a4bd5898f9a0542aab6b09ff3" },
-                { "type": "file", "url": "http://beta.quicklisp.org/archive/closer-mop/2020-06-10/closer-mop-20200610-git.tgz", "sha256": "48f4d68838083416d7e108eec375a64d520222dc8093376bf962d2a339dc8a5e" },
+                { "type": "file", "url": "http://beta.quicklisp.org/archive/closer-mop/2020-10-16/closer-mop-20201016-git.tgz", "sha256": "8d35ddde666ddebabb67ffb865900fd577745b3c2a3696bae4b1b99c7fdf8cb9" },
                 { "type": "file", "url": "http://beta.quicklisp.org/archive/cl-pdf/2019-10-07/cl-pdf-20191007-git.tgz", "sha256": "8d1dfebea322ad2f129d686ebdbbda08857d3ab2dc59502427ac1daf7db71050" },
                 { "type": "file", "url": "http://beta.quicklisp.org/archive/cl-ppcre/2019-05-21/cl-ppcre-20190521-git.tgz", "sha256": "1d4b08ea962612ba92cec7c6f5bb0b8e82efddb91affa0007ada3a95dc66d25c" },
                 { "type": "file", "url": "http://beta.quicklisp.org/archive/cl-tga/2016-03-18/cl-tga-20160318-git.tgz", "sha256": "7301d299e37a0ca1c3d194f9e664348be7809fae8fe246aa4e7a67d9c0ee6281" },
                 { "type": "file", "url": "http://beta.quicklisp.org/archive/cl-unicode/2019-05-21/cl-unicode-20190521-git.tgz", "sha256": "ecd90df05f53cec0a33eb504b9d3af0356832ad84cc0ddb3d5dc0dbb70f6405c" },
                 { "type": "file", "url": "http://beta.quicklisp.org/archive/cl-vectors/2018-02-28/cl-vectors-20180228-git.tgz", "sha256": "9e323de154017df1e4c4831037bedfdc1d8f5de83b744b96cf4865fc9dbc9e39" },
-                { "type": "file", "url": "http://beta.quicklisp.org/archive/clx/2020-06-10/clx-20200610-git.tgz", "sha256": "bcde800b22ac278efb7119941bf8702bbdb7c95d6624e5662fac4b303791552d" },
+                { "type": "file", "url": "http://beta.quicklisp.org/archive/clx/2020-07-15/clx-20200715-git.tgz", "sha256": "2aa3f707191de72484ced3c316356f36cf6ab6a8550e553e6873ee1a47357dbb" },
                 { "type": "file", "url": "http://beta.quicklisp.org/archive/collectors/2016-12-04/collectors-20161204-git.tgz", "sha256": "ee8b0548395a5048372c8c7387d17f42147d2e8448ae47ca4e1aabdcbdf0c231" },
                 { "type": "file", "url": "http://beta.quicklisp.org/archive/deflate/2020-02-18/deflate-20200218-git.tgz", "sha256": "4ee8bed5f94262a42e2dc254880d2246c92aa7318594d2b2d392d15c11b17f05" },
                 { "type": "file", "url": "http://beta.quicklisp.org/archive/documentation-utils/2019-07-10/documentation-utils-20190710-git.tgz", "sha256": "433e4ee61d533797a5426310bd9a49de944d747a0532f3f49552cc72b8467fd8" },
-                { "type": "file", "url": "http://beta.quicklisp.org/archive/flexichain/2020-04-27/flexichain-20200427-git.tgz", "sha256": "598c06c7ac1ed9ca3b5eea89412ee348e5b6dc4b61ee7d9e827d1d29fca6bbbf" },
-                { "type": "file", "url": "http://beta.quicklisp.org/archive/flexi-streams/2020-06-10/flexi-streams-20200610-git.tgz", "sha256": "2745318d2de142b6b2e9e6e82b26637b0640618fa324dbf37882fffa8cf3ffa9" },
+                { "type": "file", "url": "http://beta.quicklisp.org/archive/flexichain/2020-10-16/flexichain-20201016-git.tgz", "sha256": "0b94967a0e2376fb92fc88f875def24b2216ab90b824b217e76d33c7b7fd8456" },
+                { "type": "file", "url": "http://beta.quicklisp.org/archive/flexi-streams/2020-09-25/flexi-streams-20200925-git.tgz", "sha256": "623d80b3a6a5ddfeec8365c940ddf2edba70ee85430f80767b645a399dcfbac2" },
                 { "type": "file", "url": "http://beta.quicklisp.org/archive/ieee-floats/2017-08-30/ieee-floats-20170830-git.tgz", "sha256": "137bc5b3385c35101a6440112757df46570395cdaeed4bf11648353638c18495" },
                 { "type": "file", "url": "http://beta.quicklisp.org/archive/iterate/2020-06-10/iterate-20200610-git.tgz", "sha256": "cbd948acc37c638b4fc2af384d8415f9d60774766290a99e96efa315c4d8e377" },
                 { "type": "file", "url": "http://beta.quicklisp.org/archive/lambda-fiddle/2019-07-10/lambda-fiddle-20190710-git.tgz", "sha256": "924cd4339b3e5c15eec386e614a6ccdd1ce08a96d5b89261a7396197ee95986c" },
-                { "type": "file", "url": "http://beta.quicklisp.org/archive/log4cl/2019-10-07/log4cl-20191007-git.tgz", "sha256": "ca06dc98a9ab7798677d669a48e8f792a6e245125bab1e919adf8dc0a1229144" },
-                { "type": "file", "url": "http://beta.quicklisp.org/archive/mmap/2020-04-27/mmap-20200427-git.tgz", "sha256": "2575b1abdf459d361d2d9b18d0d53d83c0f77f39b24bdf156961723fbd25adac" },
+                { "type": "file", "url": "http://beta.quicklisp.org/archive/log4cl/2020-09-25/log4cl-20200925-git.tgz", "sha256": "2eb76a5812e66f648242cf0f7a415cc8a7ca86161be306a2216d69188ea728fd" },
+                { "type": "file", "url": "http://beta.quicklisp.org/archive/mmap/2020-10-16/mmap-20201016-git.tgz", "sha256": "54c1d5386f59d137fb933f71fc770f2783b4510d3a22f39d7c680b90cd3cb195" },
                 { "type": "file", "url": "http://beta.quicklisp.org/archive/monkeylib-binary-data/2011-12-03/monkeylib-binary-data-20111203-git.tgz", "sha256": "7abd5f0ccb2cbe54f99f817881dc732ad5ac89cedee1ff231f8bbb6c164e29a3" },
-                { "type": "file", "url": "http://beta.quicklisp.org/archive/nibbles/2020-06-10/nibbles-20200610-git.tgz", "sha256": "4dd598391cbec608286093123d0fd557b1e44878e6b247582046dc42f9c34e3d" },
-                { "type": "file", "url": "http://beta.quicklisp.org/archive/opticl/2018-12-10/opticl-20181210-git.tgz", "sha256": "5b7f88df038b8943849faab14e946198618992b82066cec4616bc129d1f5deae" },
+                { "type": "file", "url": "http://beta.quicklisp.org/archive/nibbles/2020-09-25/nibbles-20200925-git.tgz", "sha256": "646185e3478ece8f26d3496074fbd0ac7ec06a84984755565a8cff3ad1836992" },
+                { "type": "file", "url": "http://beta.quicklisp.org/archive/opticl/2020-09-25/opticl-20200925-git.tgz", "sha256": "d01d6145a385d9bc4b6b7a5d3af755bd815aa4f133e0d3cff9fc1c24fa9e1a56" },
                 { "type": "file", "url": "http://beta.quicklisp.org/archive/opticl-core/2017-10-19/opticl-core-20171019-git.tgz", "sha256": "9e4bf832abcc73c47d9f183178a706ce8c9406cd9a0a1ea4848eb453de2027c9" },
                 { "type": "file", "url": "http://beta.quicklisp.org/archive/parse-float/2020-02-18/parse-float-20200218-git.tgz", "sha256": "dcd976d9fb1913c1ffc78ba9b999915ae40a5799fc11a97db96043988e7d300b" },
-                { "type": "file", "url": "http://beta.quicklisp.org/archive/pngload/2020-06-10/pngload-20200610-git.tgz", "sha256": "8691a9713a9741feb7ea514e27feea142aec95bff86971fa3dc81caacd2ca44c" },
+                { "type": "file", "url": "http://beta.quicklisp.org/archive/pngload/2020-10-16/pngload-20201016-git.tgz", "sha256": "50f7e95d6d24dbea4a7ef17975fab70d35fd0659f32a8201cc5359c2c19c05da" },
                 { "type": "file", "url": "http://beta.quicklisp.org/archive/retrospectiff/2017-10-19/retrospectiff-20171019-git.tgz", "sha256": "7e73256712da5ca860677b66cb1d682773206b18fbc6417c8e3f7741e9597ca6" },
                 { "type": "file", "url": "http://beta.quicklisp.org/archive/salza2/2013-07-20/salza2-2.0.9.tgz", "sha256": "6aa36dc25fe2dfb411c03ad62edb39fcbf1d4ca8b45ba17a6ad20ebc9f9e10d4" },
                 { "type": "file", "url": "http://beta.quicklisp.org/archive/skippy/2015-04-07/skippy-1.3.12.tgz", "sha256": "59bc1ca8204858419f6cf24a55ed26e06f50a60f9decddbe6d3dc970cbae729c" },
-                { "type": "file", "url": "http://beta.quicklisp.org/archive/slime/2019-07-10/slime-v2.24.tgz", "sha256": "e6850e8a05033aff0d906cee8dc755031bb3a6498e8270e0723ca2804a1c583f" },
+                { "type": "file", "url": "http://beta.quicklisp.org/archive/slime/2020-09-25/slime-v2.26.tgz", "sha256": "0ce77c140628e09ad09759d41e29236e8652f3058be18961553fbd71ea266a7d" },
                 { "type": "file", "url": "http://beta.quicklisp.org/archive/spatial-trees/2014-08-26/spatial-trees-20140826-git.tgz", "sha256": "422f3f4b239702cbecbc3f88f23aef26ab7b387c4198f4f0dc458bba99793c8f" },
                 { "type": "file", "url": "http://beta.quicklisp.org/archive/split-sequence/2019-05-21/split-sequence-v2.0.0.tgz", "sha256": "6aa973591b2ba75a07774638f4702cdf329c2aa668e3f7e9866a06fab9ae9525" },
                 { "type": "file", "url": "http://beta.quicklisp.org/archive/static-vectors/2020-06-10/static-vectors-v1.8.6.tgz", "sha256": "aca262bb553dc6c3115a95da07894bd40600ad90dd3542a5e91129d43a4ba468" },
                 { "type": "file", "url": "http://beta.quicklisp.org/archive/string-case/2018-07-11/string-case-20180711-git.tgz", "sha256": "1fa4add5c0ac553ca0bc5324ee93732a0e0ba2b15ef94f026f11ec45ec8b66d8" },
                 { "type": "file", "url": "http://beta.quicklisp.org/archive/swap-bytes/2019-11-30/swap-bytes-v1.2.tgz", "sha256": "c8b7ee6422cc944892367ab8717435869a6a1ad3719e2f4d805febcb483de315" },
                 { "type": "file", "url": "http://beta.quicklisp.org/archive/symbol-munger/2015-04-07/symbol-munger-20150407-git.tgz", "sha256": "66634f8371819d568ccfab58dccf35c96d55b321063e9b85f77b9e5250a48c35" },
-                { "type": "file", "url": "http://beta.quicklisp.org/archive/trivial-arguments/2019-07-10/trivial-arguments-20190710-git.tgz", "sha256": "01b6fe14e4e51181d3ef064fd0232527de0f6e4571820a5268f400945a23130b" },
-                { "type": "file", "url": "http://beta.quicklisp.org/archive/trivial-features/2020-04-27/trivial-features-20200427-git.tgz", "sha256": "6a851fa59279c86e235419cddaae2ce55af9952e0cccebb1742e085acf35d244" },
-                { "type": "file", "url": "http://beta.quicklisp.org/archive/trivial-garbage/2020-03-25/trivial-garbage-20200325-git.tgz", "sha256": "85ede9b910186479937683422b1cfbda63b96a7172683609e080fc22116c4afe" },
-                { "type": "file", "url": "http://beta.quicklisp.org/archive/trivial-gray-streams/2018-10-18/trivial-gray-streams-20181018-git.tgz", "sha256": "3b921381df112515661c174fafa04adf11cf4620ebd7e2cc1d7bfd548fab2d28" },
+                { "type": "file", "url": "http://beta.quicklisp.org/archive/trivial-arguments/2020-09-25/trivial-arguments-20200925-git.tgz", "sha256": "2589768ca8b6b4c80a0d8e4fcd53e04e1a324f1d5dacf7db7956d71d9ca93d1d" },
+                { "type": "file", "url": "http://beta.quicklisp.org/archive/trivial-features/2020-07-15/trivial-features-20200715-git.tgz", "sha256": "22da592d1ae73e19b5b645ece4ca7af8d703cd99650565a42f38b27deeec1d40" },
+                { "type": "file", "url": "http://beta.quicklisp.org/archive/trivial-garbage/2020-09-25/trivial-garbage-20200925-git.tgz", "sha256": "034d308e463aebd4b0a86706d875416136490a45e978fec44a517e6c78143c02" },
+                { "type": "file", "url": "http://beta.quicklisp.org/archive/trivial-gray-streams/2020-09-25/trivial-gray-streams-20200925-git.tgz", "sha256": "4b4cf1c86ea4a608eea04985dad1213178cb8655f2df851d25a0f528b90be3d5" },
                 { "type": "file", "url": "http://beta.quicklisp.org/archive/trivial-indent/2019-10-07/trivial-indent-20191007-git.tgz", "sha256": "bbba15b8cd330d5e50a42755f930875cafd34a286cac66eb656f396a5ed7b16c" },
-                { "type": "file", "url": "http://beta.quicklisp.org/archive/unix-opts/2020-06-10/unix-opts-20200610-git.tgz", "sha256": "9450b06338d5c0edeb27124e59afc8f7dc5f540c226158f7048363d8dbde3fa2" },
+                { "type": "file", "url": "http://beta.quicklisp.org/archive/unix-opts/2020-09-25/unix-opts-20200925-git.tgz", "sha256": "65f45dba057dbc52345813981cd7f12f1fcb91059d4732ef3cbe225a047aeb78" },
                 { "type": "file", "url": "http://beta.quicklisp.org/archive/zpb-exif/2020-06-10/zpb-exif-1.2.4.tgz", "sha256": "36f3e9b9ae1c185667c1874dc62c66fc873cd7d7fdc0cf37e66bcbcf81e4c9ae" },
                 { "type": "file", "url": "http://beta.quicklisp.org/archive/zpb-ttf/2013-07-20/zpb-ttf-1.0.3.tgz", "sha256": "4696b7ee85b52328a996d43cbf2fe2968ac07ff75242683a17912f7641033bc7" },
                 { "type": "file", "url": "http://beta.quicklisp.org/archive/zpng/2015-04-07/zpng-1.2.2.tgz", "sha256": "3d70a1579930f98655bf56d6cf390ac19a1b076b7bbd807ea82b32cb137e6224" }
@@ -119,7 +119,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/McCLIM/McCLIM",
-                    "commit": "96c3158f263694e5d99051dd8ce8bfba2e06b1cd"
+                    "commit": "40261180adce4bdcda8d8a091aa9f7ff595f89a8"
                 }
             ],
             "build-options": {
@@ -155,7 +155,7 @@
                 {
                     "type": "git",
                     "url": "https://git.code.sf.net/p/maxima/code",
-                    "commit": "d134c8c156e606ffab924068aa8d56f2c94e1615"
+                    "commit": "8aaec93f17d9a488851c10beef47c8d2bfef1be5"
                 }
             ],
             "build-options": {
@@ -174,7 +174,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/lokedhs/maxima-client",
-                    "commit": "5087376d7cf6b55f9f27372e8847c58d82dd3f00"
+                    "commit": "b409c7f31abdbc0a1cd84bdbe9962ae70cf9394c"
                 },
                 { "type": "file", "path": "startup.lisp" },
                 { "type": "file", "path": "build.sh" }
